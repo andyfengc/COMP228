@@ -1,5 +1,8 @@
 package ca.centennial.assignment;
-
+/**
+ * print the calendar of current month
+ * @author Andy
+ */
 import java.util.Scanner;
 
 public class PrintCalendar {

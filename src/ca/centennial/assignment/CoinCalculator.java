@@ -1,7 +1,21 @@
 package ca.centennial.assignment;
 /**
- * calculate coins
- * @author Chen Feng
+ * 1.	Develop an application using Java Console that changes 
+ * a given amount of money into smaller monetary units. 
+ * The program lets the user enter an amount as double value
+ *  representing the total amount in dollars and cents, 
+ *  and outputs a report listing the monetary equivalent in dollars,
+ *   quarters, dimes, and nickels, in this order, to obtain 
+ *   the minimum number of coins. A  test run is shown below:
+
+               Enter an amount, for example, 11.58:   15.85
+
+       Your amount 15.85 consists of 
+	         15 dollars,
+	          3 quarters,
+	          1 Dimes
+	          0 nickels.
+	@author Andy(Chen Feng)
  */
 import java.util.Scanner;
 
