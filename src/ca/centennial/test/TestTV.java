@@ -85,18 +85,21 @@ public class TestTV {
 				if (value == 1) {
 					tv1.turnOff();
 					inputIsValid = true;
-				} else {
+				} else if (value == 2){
+					System.out.println(tv1.getStatus());
+					inputIsValid = true;
+				}
+				else{
 					inputIsValid = false;
 					throw new Exception();
 				}
-				tv1.turnOff();
-				inputIsValid = true;
 			} catch (Exception e) {
 				inputIsValid = false;
 				System.out.println("Sorry, you cannot turn off tv.");
 			}
 		} while (!inputIsValid);
 		
+		// finish testing
 		System.out.println("Bye");
 	}
 
