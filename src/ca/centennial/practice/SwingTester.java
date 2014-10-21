@@ -1,4 +1,4 @@
-package ca.centennial.assignment;
+package ca.centennial.practice;
 
 import javax.swing.JOptionPane;
 
