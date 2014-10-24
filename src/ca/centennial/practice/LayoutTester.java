@@ -24,7 +24,7 @@ public class LayoutTester extends JFrame {
 	}
 
 	private void buildBorderLayout() {
-		//setLayout(new BorderLayout(5, 5));
+		setLayout(new BorderLayout(5, 5));
 		this.add(new JButton("East"), BorderLayout.EAST);
 		this.add(new JButton("West"), BorderLayout.WEST);
 		this.add(new JButton("North"), BorderLayout.NORTH);
@@ -53,7 +53,7 @@ public class LayoutTester extends JFrame {
 
 	private void buildFlowLayout() {
 		// set a flow layout
-		//setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
+		setLayout(new FlowLayout(FlowLayout.LEFT, 10, 20));
 		// add components
 		add(new JLabel("First Name: "));
 		add(new JTextField(10));
@@ -74,5 +74,4 @@ public class LayoutTester extends JFrame {
 		LayoutTester lt1 = new LayoutTester("My Layout Frame");
 
 	}
-
 }
