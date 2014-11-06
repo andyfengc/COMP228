@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class LayoutTester extends JFrame {
-	public LayoutTester(String title) {
+	LayoutTester(String title) {
 		super(title);
 		// build a flow layout
 		// buildFlowLayout();
