@@ -2,7 +2,7 @@ package ca.centennial.test;
 
 /**
  * Tester for TV
- * @author Chen Feng
+ * @author Chen
  */
 
 import java.util.Scanner;

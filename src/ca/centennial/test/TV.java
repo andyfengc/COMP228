@@ -1,7 +1,7 @@
 package ca.centennial.test;
 /**
  * TV bean
- * @author Chen Feng
+ * @author Chen 
  *
  */
 

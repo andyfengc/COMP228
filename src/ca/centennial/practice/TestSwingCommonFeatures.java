@@ -11,6 +11,9 @@ public class TestSwingCommonFeatures extends JFrame
 	{
 		//create a panel to group three buttons, Flowlayout left
 		JPanel p1 = new JPanel(new FlowLayout(FlowLayout.LEFT,2,2));
+		p1.setBorder(new TitledBorder("Three Buttons"));
+		p1.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
+		
 		JButton jbtLeft = new JButton("Left");
 		JButton jbtCenter = new JButton("Center");
 		JButton jbtRight = new JButton("Right");
@@ -22,8 +25,6 @@ public class TestSwingCommonFeatures extends JFrame
 		p1.add(jbtCenter);
 		p1.add(jbtRight);
 		
-		p1.setBorder(new TitledBorder("Three Buttons"));
-		p1.setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
 		
 		//create a font and a line border
 		Font largeFont = new Font("TimesRoman", Font.BOLD, 20);

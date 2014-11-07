@@ -1,4 +1,4 @@
-package ca.centennial.test;
+package ca.centennial.practice;
 
 import java.util.Formatter;
 
