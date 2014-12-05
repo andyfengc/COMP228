@@ -13,27 +13,30 @@ import javax.swing.JTextField;
 
 public class GuiConnectionTester extends JFrame {
 	private final static String READ_TABLE = "select table_name from user_tables";
-	
+
 	private JLabel lblUserName;
 	private JLabel lblPassword;
 	private JTextField txtUserName;
 	private JTextField txtPassword;
-	private JButton btnClear;	
+	private JButton btnClear;
 	private JButton btnConnect;
 	private JTextArea txtResult;
-	
-	public GuiConnectionTester(){
-		this.setSize(400, 300);
+
+	public GuiConnectionTester() {		
+		this.setSize(500, 200);
 		this.setVisible(true);
 		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
 		
 		buildLayout();
+		
+		this.revalidate();
 	}
-	
+
 	private void buildLayout() {
 		// set content panel
 		JPanel pnlContent = new JPanel();
-		GridLayout mainLayout = new GridLayout(3, 2);
+		GridLayout mainLayout = new GridLayout(3, 2, 5, 5);
 		pnlContent.setLayout(mainLayout);
 		// add components
 		lblUserName = new JLabel("User Name");
@@ -50,12 +53,12 @@ public class GuiConnectionTester extends JFrame {
 		pnlContent.add(btnConnect);
 		// set result panel
 		JPanel pnlResult = new JPanel();
-		txtResult = new JTextArea(5, 50);
+		txtResult = new JTextArea(3, 50);
 		pnlResult.add(txtResult);
 		// add major panels
 		this.add(pnlContent, BorderLayout.CENTER);
-		this.add(pnlContent, BorderLayout.SOUTH);
-		
+		this.add(pnlResult, BorderLayout.SOUTH);
+
 	}
 
 	public static void main(String[] args) {

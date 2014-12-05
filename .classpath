@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre8"/>
 	<classpathentry kind="lib" path="D:/WORK/Library/jdbc/ojdbc14.jar"/>
 	<classpathentry kind="lib" path="C:/Program Files (x86)/Java/jre8/lib/ext/access-bridge-32.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc14.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
