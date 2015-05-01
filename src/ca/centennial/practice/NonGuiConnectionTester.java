@@ -16,10 +16,11 @@ public class NonGuiConnectionTester {
 	private final static String Connection_Str = "jdbc:oracle:thin:@oracle1.centennialcollege.ca:1521:SQLD";
 
 	public static void main(String[] args) {
-		// connectTester();
+//		 connectTester();
 //		batchProcess();
-		 displayTable();
+//		 displayTable();
 //		callProcedure();
+		callFunction();
 	}
 
 	private static void connectTester() {
@@ -102,6 +103,35 @@ public class NonGuiConnectionTester {
 	}
 
 	private static void callProcedure() {
+		// create a simple procedure in oracle
+//		create or replace procedure proc_calc(a in int, b in int, c out int)
+//		as
+//		begin
+//		c:=power(a,b);
+//		end;
+//		/
+//		sho err
+		
+		try {
+			Class.forName(Driver_Name);
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}			
+		try(Connection conn = DriverManager.getConnection(Connection_Str, UserName, Password);
+				CallableStatement cs = conn.prepareCall("{call proc_calc(?, ?, ?)}");
+						){
+			cs.setInt(1, 3);// set parameter
+			cs.setInt(2, 2);
+			cs.registerOutParameter(3, java.sql.Types.INTEGER);// register output parameter if we need to read output value
+			cs.execute(); // or cs.executeUpdate();
+			System.out.println(cs.getInt(3));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private static void callFunction(){
 		// create a simple function in oracle
 		// create or replace function func_calc(a in int, b in int)
 		// return int
@@ -112,23 +142,24 @@ public class NonGuiConnectionTester {
 		// /
 		// sho err
 		// select func_calc(2,3) from dual;
-		
 		try {
 			Class.forName(Driver_Name);
 		} catch (ClassNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}		
 		
 		try(Connection conn = DriverManager.getConnection(Connection_Str, UserName, Password);
-//				CallableStatement cs = conn.prepareCall("{call func_calc(?, ?)}");
-				CallableStatement cs = conn.prepareCall("{call func_calc(2, 3)}");
+				CallableStatement cs = conn.prepareCall("{?=call func_calc(?, ?)}");
 						){
-			cs.execute();
-			ResultSet rs = (ResultSet)cs.getObject(1);
-			while(rs.next()){
-				System.out.println(rs.getString(1));
-			}
+			cs.setInt(2, 3);
+			cs.setInt(3, 3);
+			cs.registerOutParameter(1, java.sql.Types.INTEGER);// register output parameter if we need to read output value
+			cs.execute(); // or cs.executeUpdate();
+			System.out.println(cs.getInt(1));
+//			ResultSet rs = (ResultSet)cs.getObject(1);
+//			while(rs.next()){
+//				System.out.println(rs.getString(1));
+//			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

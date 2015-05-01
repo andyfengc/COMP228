@@ -21,7 +21,8 @@ public class JavaFX1 extends Application {
 	}
 	
 	public static void main(String[] args){
-		launch(args);
+		//launch(args);
+		launch("", "");
 	}
 	
 	class Handler implements EventHandler<Event>{
